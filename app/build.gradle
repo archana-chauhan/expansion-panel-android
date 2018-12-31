@@ -1,0 +1,26 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion project.COMPILE_SDK
+    defaultConfig {
+        applicationId "florent37.github.com.expansionpanel"
+        minSdkVersion project.MIN_SDK
+        targetSdkVersion project.TARGET_SDK
+        versionCode 1
+        versionName "1.0"
+        vectorDrawables.useSupportLibrary = true
+    }
+
+    repositories {
+        maven { url 'https://oss.sonatype.org/content/repositories/snapshots/' }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+
+    implementation project(path: ':expansionpanel')
+}

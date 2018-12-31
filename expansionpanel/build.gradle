@@ -1,0 +1,56 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.COMPILE_SDK
+
+    defaultConfig {
+        minSdkVersion project.MIN_SDK
+        targetSdkVersion project.TARGET_SDK
+        versionCode 1
+        versionName "1.0"
+    }
+
+    /*
+    android {
+        compileOptions {
+            sourceCompatibility 1.8
+            targetCompatibility 1.8
+        }
+    }
+    */
+
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+}
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'expansionpanel'
+    orgName = 'florent37'
+
+    publishedGroupId = 'com.github.florent37'
+    libraryName = 'ExpansionPanel'
+    artifact = 'expansionpanel'
+
+    libraryDescription = 'ExpansionPanel'
+
+    siteUrl = 'https://github.com/florent37/ExpansionPanel'
+    gitUrl = 'https://github.com/florent37/ExpansionPanel.git'
+
+    libraryVersion = rootProject.ext.libraryVersion
+
+    developerId = 'florent37'
+    developerName = 'florent37'
+    developerEmail = 'champigny.florent@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+
+apply from: rootProject.file('gradle/install-v1.gradle')
+apply from: rootProject.file('gradle/bintray-android-v1.gradle')
